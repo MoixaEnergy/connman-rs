@@ -58,7 +58,6 @@ extern crate dbus;
 extern crate dbus_tokio;
 #[macro_use]
 extern crate failure;
-extern crate futures;
 extern crate tokio;
 
 #[cfg(feature = "introspection")]
@@ -66,8 +65,4 @@ extern crate xml;
 
 pub mod api;
 
-pub use crate::api::{
-    manager::Manager,
-    service::Service,
-    technology::Technology,
-};
+pub use crate::api::{manager::Manager, service::Service, technology::Technology};
