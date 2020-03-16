@@ -41,8 +41,6 @@
 
 extern crate dbus;
 extern crate dbus_tokio;
-#[macro_use]
-extern crate failure;
 extern crate tokio;
 
 #[cfg(feature = "introspection")]
