@@ -39,15 +39,6 @@
 #![allow(unused)]
 #![allow(clippy::redundant_field_names, clippy::let_and_return)]
 
-extern crate dbus;
-extern crate dbus_tokio;
-#[macro_use]
-extern crate failure;
-extern crate tokio;
-
-#[cfg(feature = "introspection")]
-extern crate xml;
-
 pub mod api;
 
 pub use crate::api::{manager::Manager, service::Service, technology::Technology};

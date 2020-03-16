@@ -9,6 +9,7 @@ pub mod technology;
 
 use dbus;
 use dbus::arg::{cast, RefArg, Variant};
+use failure::Fail;
 
 use std::borrow::Cow;
 use std::collections::HashMap;
@@ -25,7 +26,7 @@ pub enum Error {
     #[fail(display = "'{}'", _0)]
     PropertyError(#[cause] PropertyError),
     #[fail(display = "Failed resolve before timeout: '{}'", _0)]
-    Timeout(Cow<'static, str>)
+    Timeout(Cow<'static, str>),
 }
 
 #[derive(Debug, Fail)]
@@ -33,7 +34,7 @@ pub enum PropertyError {
     #[fail(display = "Property not present: '{}'", _0)]
     NotPresent(Cow<'static, str>),
     #[fail(display = "Failed to cast property: '{}'", _0)]
-    Cast(Cow<'static, str>)
+    Cast(Cow<'static, str>),
 }
 
 impl From<PropertyError> for Error {
